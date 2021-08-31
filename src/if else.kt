@@ -1,15 +1,21 @@
 fun main() {
-    maiorDeIdade(21)
-    maiorDeIdade(12)
-    maiorDeIdade(45)
+
+    println(calculaBonus("Gerente", 1233.12f))
+    println(calculaBonus("Coordenador", 31231.12f))
+
 }
 
-fun maiorDeIdade(idade: Int) {
+fun calculaBonus(cargo: String, salario: Float): Float {
 
-    if(idade >= 18) {
-        println("Maior de idade")
+    val bonus: Float
+
+    if(cargo == "Coordenador") {
+        bonus = salario * 4f
+    } else if(cargo == "Gerente Sênior") {
+        bonus = salario * 3f
     } else {
-        println("Menor de idade")
+        bonus = salario * 2f
     }
 
+    return bonus
 }
